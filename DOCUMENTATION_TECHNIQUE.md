@@ -42,7 +42,12 @@ Test-technique/
 
 ### c) Gestion des images
 - Champ `photoUrl` (string) pour chaque personne et animal
-- Images par défaut si non renseigné (gérées côté frontend)
+- APIs utilisées pour les images :
+  - **Personnes** : `https://randomuser.me/api/portraits/` (photos de profil réalistes)
+  - **Animaux** : `https://source.unsplash.com/` (photos d'animaux de haute qualité)
+- Images par défaut si non renseigné :
+  - Personnes : `https://randomuser.me/api/portraits/lego/1.jpg`
+  - Animaux : `https://source.unsplash.com/300x300/?animal`
 
 ### d) Sécurité & CORS
 - CORS activé pour le frontend (localhost:3001)
@@ -66,7 +71,10 @@ Test-technique/
 ### b) Fonctionnalités
 - Récupération des données via React Query
 - Affichage des photos (URL ou image par défaut)
-- Multilingue (FR/EN, bouton dans la navbar, via contexte React)
+- Multilingue (FR/EN) :
+  - Bouton de langue dans la navbar
+  - Traductions gérées via contexte React
+  - Interface complète en français et anglais
 - UI responsive (Tailwind CSS)
 - Gestion des erreurs et du chargement
 

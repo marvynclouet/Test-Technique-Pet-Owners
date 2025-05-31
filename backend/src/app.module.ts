@@ -20,6 +20,10 @@ import { AnimalController } from './controllers/animal.controller';
       database: 'pet_owners',
       entities: [Person, Animal],
       synchronize: true, // À ne pas utiliser en production
+      extra: {
+        connectionLimit: 10,
+        sql_mode: 'ALLOW_INVALID_DATES'
+      }
     }),
     TypeOrmModule.forFeature([Person, Animal]),
   ],

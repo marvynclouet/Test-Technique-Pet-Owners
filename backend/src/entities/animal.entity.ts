@@ -9,7 +9,7 @@ export class Animal {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   dateOfBirth: Date;
 
   @Column()
