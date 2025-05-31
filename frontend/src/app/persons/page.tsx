@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import { getPersons } from '../../services/api';
+import Image from 'next/image';
 
 export default function PersonsPage() {
   const { data: persons, isLoading, error } = useQuery({
@@ -38,11 +39,14 @@ export default function PersonsPage() {
             className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow focus:outline focus:ring-2 focus:ring-blue-400"
             aria-label={`View details for ${person.firstName} ${person.lastName}`}
           >
-            <img
-              src={person.photoUrl || `https://ui-avatars.com/api/?name=${encodeURIComponent(person.firstName + ' ' + person.lastName)}&background=random`}
-              alt={person.firstName}
-              className="w-16 h-16 rounded-full object-cover mb-2 mx-auto"
-            />
+            <div className="relative w-16 h-16 rounded-full overflow-hidden">
+              <Image
+                src={person.photoUrl || 'https://randomuser.me/api/portraits/lego/1.jpg'}
+                alt={`${person.firstName} ${person.lastName}`}
+                fill
+                className="object-cover"
+              />
+            </div>
             <h2 className="text-xl font-semibold mb-2">
               {person.firstName} {person.lastName}
             </h2>

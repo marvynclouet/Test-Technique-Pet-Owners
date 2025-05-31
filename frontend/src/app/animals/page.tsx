@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import { getAnimals } from '../../services/api';
+import Image from 'next/image';
 
 export default function AnimalsPage() {
   const { data: animals, isLoading, error } = useQuery({
@@ -38,15 +39,14 @@ export default function AnimalsPage() {
             className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow focus:outline focus:ring-2 focus:ring-blue-400"
             aria-label={`View details for ${animal.name}`}
           >
-            <img
-              src={animal.photoUrl || (animal.species.toLowerCase() === 'dog'
-                ? 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=facearea&w=256&h=256&facepad=2'
-                : animal.species.toLowerCase() === 'cat'
-                ? 'https://images.unsplash.com/photo-1518715308788-3005759c61d4?auto=format&fit=facearea&w=256&h=256&facepad=2'
-                : 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2')}
-              alt={animal.name}
-              className="w-16 h-16 rounded-full object-cover mb-2 mx-auto"
-            />
+            <div className="relative w-16 h-16 rounded-full overflow-hidden">
+              <Image
+                src={animal.photoUrl || 'https://source.unsplash.com/300x300/?animal'}
+                alt={animal.name}
+                fill
+                className="object-cover"
+              />
+            </div>
             <h2 className="text-xl font-semibold mb-2">{animal.name}</h2>
             <p className="text-gray-600">Species: {animal.species}</p>
             <p className="text-gray-600">Breed: {animal.breed}</p>

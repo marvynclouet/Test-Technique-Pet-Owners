@@ -9,7 +9,7 @@ export default function PersonDetailPage() {
   const params = useParams();
   const router = useRouter();
   const id = params?.id as string;
-  const { data: person, isLoading, error } = useQuery({
+  const { data: person, isLoading, error } = useQuery<Person>({
     queryKey: ['person', id],
     queryFn: () => getPerson(id),
     enabled: !!id,
