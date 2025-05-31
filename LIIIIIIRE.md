@@ -1,4 +1,3 @@
-# Test Technique — Pet Owners
 
 
 
@@ -63,12 +62,9 @@ npm run dev
 ## Notes pour le correcteur
 
 - Le code est commenté et structuré.
-- Les fichiers inutiles ont été supprimés.
 - Tout est prêt à l’emploi : il suffit d’installer, d’importer la BDD et de lancer les serveurs.
-- Pour toute question, voir les commentaires dans le code ou ce README.
+ou ce README.
+- Je me suis permis de rajouter certaines fonctionnalités (voir Doc Technique)
 
----
 
-## Auteur
-
-- Marvyn
+Marvyn
