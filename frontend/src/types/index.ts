@@ -1,11 +1,11 @@
 export interface Person {
   id: number;
-  lastName: string;
   firstName: string;
+  lastName: string;
   email: string;
   phoneNumber: string;
-  animals?: Animal[];
   photoUrl?: string;
+  animals?: Animal[];
 }
 
 export interface Animal {
@@ -16,7 +16,7 @@ export interface Animal {
   breed: string;
   color: string;
   weight: number;
+  photoUrl?: string;
   ownerId: number;
   owner?: Person;
-  photoUrl?: string;
 } 

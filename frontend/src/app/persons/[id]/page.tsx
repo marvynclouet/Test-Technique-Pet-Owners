@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getPerson } from '../../../services/api';
+import { Person, Animal } from '../../../types';
 
 export default function PersonDetailPage() {
   const params = useParams();
@@ -41,7 +42,7 @@ export default function PersonDetailPage() {
       <p className="mb-4">Phone: {person?.phoneNumber}</p>
       <h2 className="text-xl font-semibold mt-6 mb-2">Animals</h2>
       <ul className="list-disc pl-6">
-        {person?.animals?.length ? person.animals.map((animal: any) => (
+        {person?.animals?.length ? person.animals.map((animal: Animal) => (
           <li key={animal.id}>
             <Link href={`/animals/${animal.id}`} className="text-blue-600 hover:underline">{animal.name} ({animal.species})</Link>
           </li>
